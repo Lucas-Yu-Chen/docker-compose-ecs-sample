@@ -5,8 +5,6 @@ services:
     restart: always
     secrets:
       - db-password
-    volumes:
-      - db-data:/var/lib/mysql
     networks:
       - backnet
     environment:
@@ -35,8 +33,6 @@ services:
       - frontnet
     depends_on:
       - backend
-volumes:
-  db-data:
 secrets:
   db-password:
     # This is mounted to /run/secrets/ onto the container using it
